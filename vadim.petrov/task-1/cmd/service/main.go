@@ -1,3 +1,50 @@
 package main
 
-func main() {}
+import (
+	"fmt"
+)
+
+func main() {
+	var firstNum, secondNum int
+	var operation string
+
+	_, err := fmt.Scan(&firstNum)
+	if err != nil {
+		fmt.Println("Invalid first operand")
+		return
+	}
+
+	_, err = fmt.Scan(&secondNum)
+	if err != nil {
+		fmt.Println("Invalid second operand")
+		return
+	}
+
+	_, err = fmt.Scan(&operation)
+	if err != nil {
+		fmt.Println("Invalid operation")
+		return
+	}
+
+	switch operation {
+	case "+":
+		fmt.Println(firstNum + secondNum)
+		return
+	case "-":
+		fmt.Println(firstNum - secondNum)
+		return
+	case "*":
+		fmt.Println(firstNum * secondNum)
+		return
+	case "/":
+		if secondNum == 0 {
+			fmt.Println("Division by zero")
+			return
+		}
+		fmt.Println(firstNum / secondNum)
+		return
+	default:
+		fmt.Println("Invalid operation")
+		return
+	}
+}
