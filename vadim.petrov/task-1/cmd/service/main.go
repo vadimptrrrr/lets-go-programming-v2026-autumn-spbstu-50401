@@ -29,22 +29,17 @@ func main() {
 	switch operation {
 	case "+":
 		fmt.Println(firstNum + secondNum)
-		return
 	case "-":
 		fmt.Println(firstNum - secondNum)
-		return
 	case "*":
 		fmt.Println(firstNum * secondNum)
-		return
 	case "/":
 		if secondNum == 0 {
 			fmt.Println("Division by zero")
 			return
 		}
 		fmt.Println(firstNum / secondNum)
-		return
 	default:
 		fmt.Println("Invalid operation")
-		return
 	}
 }
